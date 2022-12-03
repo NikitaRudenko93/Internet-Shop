@@ -137,39 +137,44 @@ body {
     display: flex;
     justify-content: space-between;
   }
+}
 
-  .card {
+.card {
+  margin: 0;
+  margin-bottom: 30px;
+
+  &__favorite {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+
+  &__img {
+    position: relative;
+    width: 255px;
+    height: 384px;
+    background-color: #b2afbe;
     margin: 0;
+  }
 
-    &__favorite {
-      padding-right: 12px;
-      padding-top: 12px;
-      text-align: right;
-    }
+  &__name {
+    font-family: 'Merriweather';
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 14px;
+  }
 
-    &__img {
-      width: 255px;
-      height: 384px;
-      background-color: #b2afbe;
-    }
+  &__type {
+    font-size: 13px;
+    margin-top: 8px;
+    width: 200px;
+    margin-left: 0;
+  }
 
-    &__name {
-      font-family: 'Merriweather';
-      font-weight: 700;
-      font-size: 14px;
-      margin-top: 14px;
-    }
-
-    &__type {
-      font-size: 13px;
-      margin-top: 8px;
-    }
-
-    &__cost {
-      font-weight: 400;
-      font-size: 13px;
-      margin-top: 10px;
-    }
+  &__cost {
+    font-weight: 400;
+    font-size: 13px;
+    margin-top: 10px;
   }
 }
 
@@ -182,12 +187,14 @@ body {
   color: #fff;
   padding: 10px 30px;
   font-size: 14px;
+  cursor: pointer;
 }
 
 .brands {
   display: flex;
   align-items: center;
   margin-top: 100px;
+  margin-bottom: 100px;
 
   .new-bal {
     margin-left: 0;
@@ -202,7 +209,6 @@ body {
 
 .footer {
   background-color: #F7F7F9;
-  margin-top: 100px;
   height: 300px;
 
   &__column {
@@ -289,4 +295,50 @@ body {
     margin-right: 0;
     color: #86858B;
   }
+}
+
+.new {
+  width: 825px;
+  margin-right: 0;
+
+  &__img-back {
+    height: 240px;
+    background-size: cover;
+    margin-bottom: 40px;
+    margin-top: 80px;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__head {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    margin-left: 0;
+  }
+
+  &__head-text {
+    font-size: 14px;
+    margin-left: 0;
+  }
+
+  &__text {
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    color: #32313A;
+  }
+
+  &__card {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+.line {
+  border-top: 1px solid #E6E5E8;
 }

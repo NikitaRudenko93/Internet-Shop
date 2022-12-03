@@ -5,7 +5,7 @@ const Arrow = ({ className }) => {
   const [value, setValue] = useState(null);
   return (
     <>
-      <ArrowSvg className={className} setActive={setValue} active={value} />
+      <ArrowSvg className="arrow" setActive={setValue} active={value} />
     </>
   );
 };

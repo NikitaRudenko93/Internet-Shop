@@ -10,7 +10,7 @@ const Slider = ({ head }) => {
           <h1 className="slider__text">{head}New arrivals</h1>
           <div className="slider__arrow">
             {[...Array(2)].map(() => {
-              return <Arrow className="arrow" />;
+              return <Arrow />;
             })}
           </div>
         </div>

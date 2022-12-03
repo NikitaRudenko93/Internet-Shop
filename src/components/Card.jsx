@@ -7,14 +7,14 @@ const Card = ({ img, name, type, cost }) => {
     <>
       <div className="card">
         <div className="card__img">
-          {img}{" "}
+          <img className="card__img" src={img} alt={type} />
           <div className="card__favorite">
             <SlideHeartSvg setActive={setValue} active={value} />
           </div>
         </div>
-        <div className="card__name">{name}ZARA</div>
-        <div className="card__type">{type}Patterned suite</div>
-        <div className="card__cost">{cost}$75.90</div>
+        <div className="card__name">{name}</div>
+        <div className="card__type">{type}</div>
+        <div className="card__cost">$ {cost}</div>
       </div>
     </>
   );

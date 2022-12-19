@@ -62,6 +62,14 @@ export const ShopBagSvg = ({ className }) => (
   </svg>
 );
 
+export const ButDown = ({ className }) => (
+  <>
+    <svg className={className} width="12" height="9" fill="none">
+      <path stroke="#32313A" d="M1.5 1.25 5 4.75l3.5-3.5" />
+    </svg>
+  </>
+);
+
 export const SearchSvg = ({ className }) => (
   <svg
     className={className}
@@ -79,32 +87,32 @@ export const SearchSvg = ({ className }) => (
 
 export const ArrowSvg = ({ className, active, setActive }) => (
   <svg
+    xmlns="http://www.w3.org/2000/svg"
     onClick={(event) => {
       setActive(event.target);
     }}
     className={className}
-    xmlns="http://www.w3.org/2000/svg"
     width="26"
     height="16"
     fill="none"
   >
     <path
-      style={{ stroke: active ? "black" : "#B5B5BC" }}
+      stroke={active ? "black" : "#B5B5BC"}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
       d="M25 8H1M8 15 1 8l7-7"
     />
   </svg>
 );
 
-export const SlideHeartSvg = ({ className, active, setActive }) => (
+export const SlideHeartSvg = ({ className }) => (
   <svg
-    onClick={(event) => {
-      setActive(event.target);
-    }}
     className={className}
     xmlns="http://www.w3.org/2000/svg"
     width="24"
     height="24"
-    style={{ fill: active ? "black" : "none" }}
+    fill="none"
   >
     <rect width="24" height="24" fill="#F7F7F9" rx="12" />
     <path
@@ -191,15 +199,16 @@ export const YouTubeSvg = ({ className }) => (
   </svg>
 );
 
-export const LoadSvg = () => (
+export const LoadSvg = ({ className }) => (
   <svg
+    className={className}
     xmlns="http://www.w3.org/2000/svg"
-    width="200"
-    height="200"
+    width="150"
+    height="150"
     preserveAspectRatio="xMidYMid"
     viewBox="0 0 100 100"
   >
-    <rect width="6" height="12" x="47" y="24" fill="#85a2b6" rx="3" ry="6">
+    <rect width="6" height="12" x="47" y="24" fill="#32313A" rx="3" ry="6">
       <animate
         attributeName="opacity"
         begin="-0.9166666666666666s"
@@ -214,7 +223,7 @@ export const LoadSvg = () => (
       height="12"
       x="47"
       y="24"
-      fill="#85a2b6"
+      fill="#32313A"
       rx="3"
       ry="6"
       transform="rotate(30 50 50)"
@@ -233,7 +242,7 @@ export const LoadSvg = () => (
       height="12"
       x="47"
       y="24"
-      fill="#85a2b6"
+      fill="#32313A"
       rx="3"
       ry="6"
       transform="rotate(60 50 50)"
@@ -252,7 +261,7 @@ export const LoadSvg = () => (
       height="12"
       x="47"
       y="24"
-      fill="#85a2b6"
+      fill="#32313A"
       rx="3"
       ry="6"
       transform="rotate(90 50 50)"
@@ -271,7 +280,7 @@ export const LoadSvg = () => (
       height="12"
       x="47"
       y="24"
-      fill="#85a2b6"
+      fill="#32313A"
       rx="3"
       ry="6"
       transform="rotate(120 50 50)"
@@ -290,7 +299,7 @@ export const LoadSvg = () => (
       height="12"
       x="47"
       y="24"
-      fill="#85a2b6"
+      fill="#32313A"
       rx="3"
       ry="6"
       transform="rotate(150 50 50)"
@@ -309,7 +318,7 @@ export const LoadSvg = () => (
       height="12"
       x="47"
       y="24"
-      fill="#85a2b6"
+      fill="#32313A"
       rx="3"
       ry="6"
       transform="rotate(180 50 50)"
@@ -328,7 +337,7 @@ export const LoadSvg = () => (
       height="12"
       x="47"
       y="24"
-      fill="#85a2b6"
+      fill="#32313A"
       rx="3"
       ry="6"
       transform="rotate(210 50 50)"
@@ -347,7 +356,7 @@ export const LoadSvg = () => (
       height="12"
       x="47"
       y="24"
-      fill="#85a2b6"
+      fill="#32313A"
       rx="3"
       ry="6"
       transform="rotate(240 50 50)"
@@ -366,7 +375,7 @@ export const LoadSvg = () => (
       height="12"
       x="47"
       y="24"
-      fill="#85a2b6"
+      fill="#32313A"
       rx="3"
       ry="6"
       transform="rotate(270 50 50)"
@@ -385,7 +394,7 @@ export const LoadSvg = () => (
       height="12"
       x="47"
       y="24"
-      fill="#85a2b6"
+      fill="#32313A"
       rx="3"
       ry="6"
       transform="rotate(300 50 50)"
@@ -404,7 +413,7 @@ export const LoadSvg = () => (
       height="12"
       x="47"
       y="24"
-      fill="#85a2b6"
+      fill="#32313A"
       rx="3"
       ry="6"
       transform="rotate(330 50 50)"

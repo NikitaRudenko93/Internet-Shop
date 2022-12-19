@@ -7,10 +7,10 @@ const Discount = () => {
       <div className="discount">
         <div className="discount__text">
           Up to 50% off all dresses when use code DRESSLOVER
+          <Link to="/shop" className="discount__link">
+            Shop dresses
+          </Link>
         </div>
-        <Link to="/.." className="discount__link">
-          Shop dresses
-        </Link>
       </div>
     </>
   );

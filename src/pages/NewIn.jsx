@@ -8,11 +8,11 @@ import {
 import { getCloth } from "../api/cloth";
 import Card from "../components/Card";
 import { LoadSvg } from "../components/image";
-import img from "../components/new in components/image/newInImg.png";
+import img from "../components/catalog-components/image/newInImg.png";
 
 const NewIn = () => {
   const dispatch = useDispatch();
-  const { loading, error, cloth } = useSelector((store) => store.cloth);
+  const { loading, error, cloth } = useSelector((store) => store.clothWomen);
 
   useEffect(() => {
     dispatch(clothLoading());
@@ -21,7 +21,7 @@ const NewIn = () => {
         dispatch(clothLoadingSuccess(data));
       })
       .catch((error) => dispatch(clothLoadingFailed(error.message)));
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
@@ -37,11 +37,9 @@ const NewIn = () => {
             </div>
             <h2 className="new__text">New in</h2>
             <div className="new__card">
-              {loading && <LoadSvg />}
+              {loading && <LoadSvg className="loading-anim" />}
               {cloth &&
-                cloth.map(({ image, price, title }) => (
-                  <Card img={image} cost={price} type={title} />
-                ))}
+                cloth.map((item, index) => <Card value={item} key={index} />)}
               {error && error}
             </div>
           </div>

@@ -1,0 +1,160 @@
+.size-nav {
+  width: 350px;
+  height: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: solid 1px #CCCBCF;
+
+  &__elem {
+    font-size: 14px;
+    margin-left: 12px;
+  }
+
+  &__container_drop {
+    width: 350px;
+    position: absolute;
+    top: 39px;
+    left: -1px;
+    border: solid 1px #CCCBCF;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  &__container {
+    display: none;
+  }
+
+  &__drop-content {
+    list-style-type: none;
+    padding: 10px;
+    border-bottom: solid 1px #CCCBCF;
+    background-color: #fff;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #dfdfdf;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    text-align: right;
+    position: absolute;
+    border: none;
+    background: none;
+    height: 20px;
+    cursor: pointer;
+    height: 40px;
+    padding-right: 10px;
+    line-height: 10px;
+  }
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 80px;
+
+  &__img {
+    &_size {
+      width: 610px;
+      height: 900px;
+      object-fit: contain;
+    }
+  }
+
+  &__inner {
+    margin-left: 30px;
+  }
+
+  &__text {
+    font-size: 14px;
+    color: #6E6D74;
+    padding-bottom: 12px;
+  }
+
+  &__title {
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    color: #32313A;
+    padding-bottom: 16px;
+  }
+
+  &__star-rate {
+    display: flex;
+    justify-content: space-between;
+    max-width: 220px;
+    padding-right: 5px;
+
+    &_pos {
+      display: flex;
+    }
+  }
+
+  &__price {
+    padding: 30px 0;
+    font-weight: 600;
+    font-size: 24px;
+    color: #DA2E3F;
+  }
+
+  &__choose-color {
+    font-weight: 600;
+    font-size: 14px;
+    color: #4A4951;
+    margin-left: 6px;
+  }
+
+  &__choose-img {
+    display: flex;
+    gap: 15px;
+
+
+    &_red {
+      width: 50px;
+      height: 50px;
+      background-color: rgb(255, 0, 0);
+      border-radius: 50%;
+    }
+
+    &_green {
+      width: 50px;
+      height: 50px;
+      background-color: rgba(2, 232, 2, 0.838);
+      border-radius: 50%;
+    }
+  }
+
+  &__add {
+    max-width: 350px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  &__btn {
+    max-width: 300px;
+    width: 100%;
+  }
+
+  &__favorite {
+    border: none;
+    background-color: white;
+  }
+}
+
+.size-cloth {
+  margin: 30px 0;
+
+  &__text {
+    font-size: 14px;
+    color: #6E6D74;
+    margin-bottom: 12px;
+    max-width: 350px;
+    display: flex;
+    justify-content: space-between;
+  }
+}

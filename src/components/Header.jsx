@@ -1,6 +1,7 @@
 import { HeartSvg, LogoSvg, ShopBagSvg, UserSvg } from "./image";
 import Footer from "./Footer";
 import Nav from "./Nav";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -8,12 +9,18 @@ const Header = () => {
       <header className="header">
         <div className="header__top container">
           <div className="header__logo">
-            <LogoSvg />
+            <Link to="/">
+              <LogoSvg />
+            </Link>
           </div>
           <div className="icon">
-            <HeartSvg className="icon__item" />
+            <Link to="/favorite">
+              <HeartSvg className="icon__item" />
+            </Link>
             <UserSvg className="icon__item" />
-            <ShopBagSvg className="icon__item bag" />
+            <Link to="/bag">
+              <ShopBagSvg className="icon__item icon__item_pos" />
+            </Link>
           </div>
         </div>
       </header>

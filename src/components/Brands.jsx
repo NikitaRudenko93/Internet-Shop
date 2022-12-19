@@ -6,11 +6,11 @@ const Brands = () => {
   return (
     <>
       <div className="container brands">
-        <NbSvg className="new-bal" />
-        <MartensSvg />
-        <ConverseSvg />
-        <SteveSvg />
-        <UggSvg />
+        <NbSvg className="brands__item" />
+        <MartensSvg className="brands__item" />
+        <ConverseSvg className="brands__item" />
+        <SteveSvg className="brands__item" />
+        <UggSvg className="brands__item" />
         <Link to="/" className="brands__link">
           All brands
         </Link>

@@ -1,16 +1,53 @@
-.intro {
-  padding-top: 328px;
-  padding-bottom: 100px;
+@keyframes scroll {
+  0% {
+    transform: translate(0, 0);
+  }
 
-  &__card {
-    display: flex;
-    justify-content: space-between;
+  100% {
+    transform: translate(-100%, 0)
   }
 }
 
+.discount {
+  background-color: #ED83A8;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  border-bottom: 10px solid;
+  height: 60px;
+  white-space: nowrap;
+  overflow: hidden;
 
 
-.types {
+  &__text {
+    padding-left: 100%;
+    animation: scroll 30s infinite linear;
+  }
+
+  &__link {
+    color: #fff;
+    display: inline-block;
+    margin-left: 20px;
+  }
+}
+
+.intro {
+  height: calc(100vh - 174px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: flex-end;
+
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+  }
+}
+
+.cloth-types {
   margin: 0;
 
   &__img {
@@ -20,10 +57,12 @@
   }
 
   &__text {
+    display: block;
+    text-decoration: none;
     text-align: center;
     background-color: #32313A;
     color: #fff;
-
+    letter-spacing: 0.03rem;
     font-size: 14px;
     padding: 10px 0;
   }
@@ -32,7 +71,7 @@
 .pictures {
   display: flex;
   justify-content: space-between;
-  margin: 100px auto;
+  padding: 50px 0;
 
   &__img {
     width: 550px;
@@ -45,7 +84,7 @@
 .eco-shop {
   display: flex;
   justify-content: space-between;
-  margin-top: 100px;
+  padding: 50px 0;
 
   &__img {
     width: 540px;
@@ -83,5 +122,5 @@
 }
 
 .line-img {
-  margin-top: 170px;
+  padding: 120px 0 50px 0;
 }

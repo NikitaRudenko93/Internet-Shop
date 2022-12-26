@@ -55,7 +55,7 @@ const Footer = () => {
                   className="subs"
                   placeholder="Enter your Email"
                 />
-                <button className="btn">Subscribe</button>
+                <button className="subs__btn btn">Subscribe</button>
               </div>
               <div className="social">
                 <InstaSvg className="social__icon" />

@@ -85,11 +85,14 @@ export const SearchSvg = ({ className }) => (
   </svg>
 );
 
-export const ArrowSvg = ({ className, active, setActive }) => (
+export const ArrowSvg = ({ className, hover, setHover }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    onClick={(event) => {
-      setActive(event.target);
+    onMouseEnter={(e) => {
+      setHover(e.target);
+    }}
+    onMouseLeave={(e) => {
+      setHover(null);
     }}
     className={className}
     width="26"
@@ -97,7 +100,7 @@ export const ArrowSvg = ({ className, active, setActive }) => (
     fill="none"
   >
     <path
-      stroke={active ? "black" : "#B5B5BC"}
+      stroke={hover ? "#32313A" : "#B5B5BC"}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="2"
@@ -427,5 +430,81 @@ export const LoadSvg = ({ className }) => (
         values="1;0"
       />
     </rect>
+  </svg>
+);
+
+export const WitoutItemSvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="none">
+    <path fill="#fff" d="M0 0h80v80H0z" />
+    <path
+      fill="#E9EBEE"
+      fillRule="evenodd"
+      d="M43.337 6.758c9.396-1.783 20.35-3.015 27.379 3.47 7.142 6.588 6.19 17.662 6.059 27.378-.128 9.529-.403 19.575-6.787 26.65-6.642 7.361-16.737 10.29-26.65 10.407-10.043.119-19.89-2.977-27.287-9.77C8.329 57.8 1.044 47.908 2.983 37.605c1.833-9.746 13.83-12.623 21.709-18.646C30.826 14.271 35.75 8.198 43.337 6.758Z"
+      clipRule="evenodd"
+    />
+    <path
+      stroke="#32313A"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M59.453 26.536a12.134 12.134 0 0 0-17.12 0l-2.334 2.326-2.332-2.326a12.125 12.125 0 0 0-8.56-3.535c-3.212 0-6.29 1.272-8.561 3.535A12.051 12.051 0 0 0 17 35.071c0 3.2 3.151 8.368 5.422 10.632L39.999 63l17.665-17.297c1.124-1.12 3.805-4.549 4.414-6.013a12.036 12.036 0 0 0-2.625-13.154Z"
+    />
+    <path
+      stroke="#32313A"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.5"
+      d="M36.52 46.17s1.138-2.162 3.795-2.162 3.795 2.162 3.795 2.162"
+    />
+    <ellipse
+      cx="47.904"
+      cy="37.595"
+      fill="#32313A"
+      stroke="#32313A"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      rx="1.627"
+      ry="1.622"
+    />
+    <ellipse
+      cx="32.722"
+      cy="37.595"
+      fill="#32313A"
+      stroke="#32313A"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      rx="1.627"
+      ry="1.622"
+    />
+    <g
+      stroke="#86858B"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.5"
+      opacity=".7"
+    >
+      <path d="M40.25 15.25v-4.5M44.637 16.441l1.902-4.078M35.898 16.441l-1.902-4.078M23.505 63v-3M22 61.51h3M70.505 53v-3M69 51.51h3" />
+      <circle cx="61.5" cy="16.5" r="1.5" />
+      <circle cx="51" cy="67" r="1" fill="#86858B" />
+      <circle cx="15" cy="16" r="2" />
+    </g>
+    <path
+      fill="#fff"
+      fillRule="evenodd"
+      d="M11.215 36.277c1.825.606 2.155 2.786 2.253 4.707.104 2.04.162 4.528-1.745 5.263-1.956.755-3.779-.969-5.038-2.646-1.151-1.532-1.815-3.508-.807-5.137 1.118-1.808 3.32-2.857 5.337-2.187Z"
+      clipRule="evenodd"
+    />
+    <path
+      fill="#E9EBEE"
+      fillRule="evenodd"
+      d="M12.549 66.865c1.044-.309 2.07.224 2.753 1.071.88 1.093 1.882 2.522 1.06 3.66-.838 1.157-2.545.759-3.872.23-1.068-.426-1.862-1.363-1.848-2.512.014-1.144.81-2.125 1.907-2.449Z"
+      clipRule="evenodd"
+    />
+    <path
+      fill="#fff"
+      fillRule="evenodd"
+      d="M12.701 31.013c.914-.065 1.967.09 2.3.943.379.974-.025 2.099-.884 2.696-.81.564-1.913.41-2.668-.225-.624-.525-.498-1.436-.218-2.202.242-.659.77-1.162 1.47-1.212Z"
+      clipRule="evenodd"
+    />
   </svg>
 );

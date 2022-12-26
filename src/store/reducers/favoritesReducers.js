@@ -6,8 +6,7 @@ const favoritesReducers = createReducer([], (builder) => {
       return [...store, payload];
     })
     .addCase("FAVORITES_REMOVE", (store, { payload }) => {
-      const [id = !id, ...data] = store;
-      return data;
+      return [...store.filter((item) => item.id !== payload.id)];
     });
 });
 

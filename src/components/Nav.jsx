@@ -5,8 +5,8 @@ import Search from "./Search";
 const Nav = () => {
   return (
     <>
-      <nav className="nav">
-        <div className="container nav__blok">
+      <div className="nav">
+        <div className="nav__blok container">
           <nav className="nav__elem">
             <Link to="/newIn" className="nav__link">
               New in <ButDown className="but-down" />
@@ -30,7 +30,7 @@ const Nav = () => {
           <Search />
         </div>
         <Outlet />
-      </nav>
+      </div>
     </>
   );
 };

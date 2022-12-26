@@ -1,9 +1,11 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import Card from "../components/Card";
+import { WitoutItemSvg } from "../components/image";
 
 const Favorite = () => {
   const favorites = useSelector((store) => store.favorites);
-  console.log(favorites);
+
   if (favorites.length > 0) {
     return (
       <div className="container">
@@ -19,6 +21,21 @@ const Favorite = () => {
       </div>
     );
   }
+
+  return (
+    <div className="container">
+      <div className="favorites__without-content">
+        <WitoutItemSvg />
+        <p className="favorites__text">You have no saved items.</p>
+        <p className="favorites__text">
+          Start saving as you shop by selecting the little heart.
+        </p>
+        <Link to="/">
+          <button className="favorites__button btn">Start shopping</button>
+        </Link>
+      </div>
+    </div>
+  );
 };
 
 export default Favorite;

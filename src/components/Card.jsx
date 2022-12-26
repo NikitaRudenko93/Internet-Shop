@@ -1,32 +1,12 @@
 import { Link } from "react-router-dom";
 import { SlideHeartSvg } from "./image";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  favoritesAdd,
-  favoritesRemove,
-} from "../store/actions/favoritesAction ";
+import useFavorite from "./hooks/useFavorite";
 
 const Card = ({ value }) => {
   const { id, title, price, description, category, image, rating } = value;
-  const dispatch = useDispatch();
-  const favorites = useSelector((store) => store.favorites);
 
-  const inFavorites = () => {
-    const result = favorites.filter((item) => item.id === id);
+  const { inFavorites, toggleFavorites } = useFavorite(id, value);
 
-    if (result.length > 0) {
-      return true;
-    }
-    return false;
-  };
-
-  const toggleFavorites = () => {
-    if (inFavorites()) {
-      dispatch(favoritesRemove(value));
-    } else {
-      dispatch(favoritesAdd(value));
-    }
-  };
   return (
     <>
       <div className="card">
@@ -39,7 +19,7 @@ const Card = ({ value }) => {
             }}
           >
             <SlideHeartSvg
-              className={`card__favorit ${
+              className={`card__favorite ${
                 inFavorites() ? "card__favorite_active" : null
               }`}
             />

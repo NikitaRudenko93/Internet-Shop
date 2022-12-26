@@ -5,10 +5,10 @@ import Card from "../Card";
 import { ArrowSvg } from "../image";
 
 const Arrow = () => {
-  const [value, setValue] = useState(null);
+  const [hover, setHover] = useState(null);
   return (
     <>
-      <ArrowSvg className="arrow" setActive={setValue} active={value} />
+      <ArrowSvg className="arrow" setHover={setHover} hover={hover} />
     </>
   );
 };
@@ -16,9 +16,9 @@ const Arrow = () => {
 const glideConfig = {
   perView: 4,
   // type: "carousel",
-  // autoplay: 3000,
-  // animationDuration: 800,
-  // animationTimingFunc: "linear",
+  // autoplay: 2000,
+  // animationDuration: 600,
+  animationTimingFunc: "linear",
   // hoverpause: true,
 };
 

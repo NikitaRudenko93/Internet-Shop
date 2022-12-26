@@ -13,13 +13,13 @@ const Header = () => {
               <LogoSvg />
             </Link>
           </div>
-          <div className="icon">
+          <div className="pagination">
             <Link to="/favorite">
-              <HeartSvg className="icon__item" />
+              <HeartSvg className="pagination__icon" />
             </Link>
-            <UserSvg className="icon__item" />
+            <UserSvg className="pagination__icon" />
             <Link to="/bag">
-              <ShopBagSvg className="icon__item icon__item_pos" />
+              <ShopBagSvg className="pagination__icon pagination__icon_pos" />
             </Link>
           </div>
         </div>

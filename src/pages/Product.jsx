@@ -5,9 +5,16 @@ import { LoadSvg } from "../components/image";
 import axios from "axios";
 import { SizeBar } from "../components/product-component/SizeBar";
 import "../components/product-component/productStyle.scss";
+import useFavorite from "../components/hooks/useFavorite";
 
-const FavoriteSvg = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="none">
+const FavoriteSvg = ({ className }) => (
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    width="42"
+    height="42"
+    fill="none"
+  >
     <rect width="42" height="42" fill="#E4E5E8" rx="21" cursor="pointer" />
     <path
       stroke="#6E6D74"
@@ -34,6 +41,10 @@ const Product = () => {
 
   const { title, price, description, category, image, rating } = productData;
 
+  const { inFavorites, toggleFavorites } = useFavorite(
+    productData.id,
+    productData
+  );
   return loading ? (
     <LoadSvg className="loading-anim" />
   ) : (
@@ -77,8 +88,17 @@ const Product = () => {
           </div>
           <div className="product__add">
             <button className="btn product__btn">Add to cart</button>
-            <button className="product__favorite">
-              <FavoriteSvg />
+            <button
+              className="product__favorites"
+              onClick={() => {
+                toggleFavorites();
+              }}
+            >
+              <FavoriteSvg
+                className={`product__favorites ${
+                  inFavorites() ? "product__favorites_active" : null
+                }`}
+              />
             </button>
           </div>
           <div className="product__info">

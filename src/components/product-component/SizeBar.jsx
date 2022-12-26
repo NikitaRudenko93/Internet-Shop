@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import "./productStyle.scss";
 
-const IconDown = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none">
+const IconDown = ({ className }) => (
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    fill="none"
+  >
     <path
       stroke="#32313A"
       strokeLinecap="round"
@@ -52,7 +58,11 @@ const SizeBar = ({ item }) => {
         className="size-nav__button"
         onClick={() => (hidden ? setHidden(false) : setHidden(true))}
       >
-        <IconDown />
+        <IconDown
+          className={`${
+            !hidden ? "size-nav__button-icon" : "size-nav__button-icon_active"
+          }`}
+        />
       </button>
     </div>
   );

@@ -15,6 +15,7 @@ import {
 } from "../store/actions/clothAction";
 import { getCloth } from "../api/cloth";
 import { LoadSvg } from "../components/image";
+import Api from "../components/imageSlider/Api";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -38,9 +39,8 @@ const HomePage = () => {
       {error && error}
       <Pictures />
       {cloth && (
-        <Slider prod={cloth} className="glide2" head="Our picks for you" />
+        <Slider prod={Api} className="glide2" head="Our picks for you" />
       )}
-      {loading && <LoadSvg className="loading-anim" />}
       <EcoShop />
       <LineImg />
       <Brands />

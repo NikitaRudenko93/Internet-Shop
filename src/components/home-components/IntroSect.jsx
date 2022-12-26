@@ -37,14 +37,14 @@ const arr = [
   },
 ];
 
-const CardHome = ({ value, img }) => {
+const IntroCards = ({ value, img }) => {
   return (
     <>
-      <div className="cloth-types">
-        <div className="cloth-types__img">
+      <div className="intro__cards">
+        <div className="intro__card-img">
           <img src={img} alt={value} />
         </div>
-        <Link to={`/${value.toLowerCase()}`} className="cloth-types__text">
+        <Link to={`/${value.toLowerCase()}`} className="intro__card-text">
           {value}
         </Link>
       </div>
@@ -55,9 +55,12 @@ const CardHome = ({ value, img }) => {
 const IntroSect = () => {
   return (
     <div className="intro" style={{ backgroundImage: `url(${Home})` }}>
-      <div className="container intro__content">
+      <div className="intro_opasity"></div>
+      <div className="intro__content">
         {arr.map(({ type, img }, index) => {
-          return <CardHome value={type} img={img} key={index} />;
+          return (
+            <IntroCards value={type} img={img} key={`shr_cloth-type${index}`} />
+          );
         })}
       </div>
     </div>

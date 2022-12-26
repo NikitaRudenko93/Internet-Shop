@@ -1,6 +1,9 @@
 import BagClear from "../components/bag-components/BagClear";
 import BagItems from "../components/bag-components/BagItems";
-import { TrashSvg } from "../components/shopIcon";
+import Slider from "../components/slider/Slider";
+import Api from "../components/imageSlider/Api";
+import Brands from "../components/Brands";
+import BagOrder from "../components/bag-components/BagOrder";
 
 const ShopBag = () => {
   return (
@@ -16,39 +19,20 @@ const ShopBag = () => {
                 <span className="bag__title-text quantity">Quantity</span>
                 <span className="bag__title-text total">Total</span>
               </div>
-              <BagItems />
+              {[...Array(1)].map((item) => {
+                return <BagItems key={`bag_srh${item}`} />;
+              })}
               <BagClear />
             </div>
           </div>
           <div className="shop-bag__col2">
-            <div className="order">
-              <h2 className="order__title">Order summary</h2>
-              <div className="order__price">
-                <span className="order__text">Subtotal</span>
-                <span className="order__text">$110.80</span>
-              </div>
-              <div className="order__price">
-                <span className="order__text">Shipping</span>
-                <span className="order__text">$5.95</span>
-              </div>
-              <form className="order__form">
-                <input
-                  type="text"
-                  className="order__inp"
-                  placeholder="Promocode"
-                />
-                <button className="order__btn btn">Apply</button>
-              </form>
-              <div className="order__total">
-                <span className="order__total-title">Order total</span>
-                <span className="order__total-price">$116.75</span>
-              </div>
-              <button className="order__btn-push btn">
-                Proceed to checkout
-              </button>
-            </div>
+            <BagOrder />
           </div>
         </div>
+        <div className="shop-bag__slider">
+          <Slider prod={Api} head="You may also like" />
+        </div>
+        <Brands />
       </div>
     </div>
   );

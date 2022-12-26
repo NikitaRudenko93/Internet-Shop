@@ -13,11 +13,11 @@
   display: flex;
   align-items: center;
   color: #fff;
-  border-bottom: 10px solid;
+  font-weight: 400;
+  font-size: 18px;
   height: 60px;
   white-space: nowrap;
   overflow: hidden;
-
 
   &__text {
     padding-left: 100%;
@@ -32,39 +32,78 @@
 }
 
 .intro {
-  height: calc(100vh - 174px);
+  margin-top: 10px;
+  height: calc(100vh - 184px);
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 50px;
-  display: flex;
-  align-items: flex-end;
+  position: relative;
 
+  &_opasity {
+    height: 100%;
+    transition: all 1s;
 
-  &__content {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 100px;
-  }
-}
-
-.cloth-types {
-  margin: 0;
-
-  &__img {
-    width: 160px;
-    height: 238px;
-    background-color: #a6a5ad;
+    &:hover {
+      background-color: #ED83A8;
+      opacity: 0.6;
+    }
   }
 
-  &__text {
+  &__cards:nth-of-type(1) {
+    position: absolute;
+    bottom: 100px;
+    left: 165px;
+  }
+
+  &__cards:nth-of-type(2) {
+    position: absolute;
+    bottom: 100px;
+    left: 355px;
+  }
+
+  &__cards:nth-of-type(3) {
+    position: absolute;
+    bottom: 100px;
+    left: 545px;
+  }
+
+  &__cards:nth-of-type(4) {
+    position: absolute;
+    bottom: 100px;
+    right: 545px;
+  }
+
+  &__cards:nth-of-type(5) {
+    position: absolute;
+    bottom: 100px;
+    right: 355px;
+  }
+
+  &__cards:nth-of-type(6) {
+    position: absolute;
+    bottom: 100px;
+    right: 165px;
+  }
+
+  &__card-img {
+    max-height: 238px;
+  }
+
+  &__card-text {
     display: block;
-    text-decoration: none;
-    text-align: center;
     background-color: #32313A;
     color: #fff;
-    letter-spacing: 0.03rem;
+    font-weight: 600;
     font-size: 14px;
+    text-decoration: none;
+    text-align: center;
     padding: 10px 0;
+    transition: all 0.5s linear;
+
+    &:hover {
+      background-color: #ED83A8;
+      text-decoration: underline;
+    }
   }
 }
 
@@ -93,7 +132,6 @@
   }
 
   .eco {
-    margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -109,14 +147,15 @@
     &__text {
       font-size: 14px;
       width: 444px;
+      line-height: 22px;
       color: #6E6D74;
       margin-top: 16px;
     }
 
     &__btn {
-
-      margin-left: 0;
       margin-top: 30px;
+      padding: 10px 8px;
+      max-width: 190px;
     }
   }
 }

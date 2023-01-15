@@ -10,13 +10,13 @@ import {
 } from "../store/actions/clothAction";
 
 const Search = () => {
-  const [searchInput, setsearchInput] = useState("");
+  const [searchInput, setSearchInput] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const { cloth } = useSelector((store) => store.clothWomen);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!cloth.length == 0) {
+    if (!cloth.length === 0) {
       dispatch(clothLoading());
       getCloth()
         .then(({ data }) => {
@@ -27,12 +27,12 @@ const Search = () => {
   }, [dispatch]);
 
   const closeSearch = () => {
-    setsearchInput("");
+    setSearchInput("");
     setSearchResult([]);
   };
 
   const searchDis = (e) => {
-    setsearchInput(e.target.value);
+    setSearchInput(e.target.value);
     const filtredData = cloth.filter((item) => {
       if (e.target.value === "") {
         return null;

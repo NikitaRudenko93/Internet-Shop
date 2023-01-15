@@ -18,7 +18,7 @@ const Header = () => {
               <HeartSvg className="pagination__icon" />
             </Link>
             <UserSvg className="pagination__icon" />
-            <Link to="/bag">
+            <Link to="/cart">
               <ShopBagSvg className="pagination__icon pagination__icon_pos" />
             </Link>
           </div>

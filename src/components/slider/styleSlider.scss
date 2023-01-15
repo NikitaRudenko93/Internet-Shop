@@ -1,0 +1,26 @@
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
+.slider {
+  padding: 50px 0;
+
+  &__head {
+    display: flex;
+    padding-bottom: 30px;
+    cursor: auto;
+  }
+
+  &__arrow {
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+
+    &_left {
+      transform: rotate(180deg);
+      margin-left: 20px;
+      height: 26px;
+    }
+  }
+}

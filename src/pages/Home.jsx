@@ -3,7 +3,7 @@ import Discount from "../components/home-components/Discount";
 import EcoShop from "../components/home-components/EcoShop";
 import IntroSect from "../components/home-components/IntroSect";
 import LineImg from "../components/home-components/LineImg";
-import Pictures from "../components/home-components/Pictures";
+import BlokImg from "../components/home-components/BlokImg";
 import Slider from "../components/slider/Slider";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -37,10 +37,8 @@ const HomePage = () => {
       {cloth && <Slider prod={cloth} head="New arrivals" />}
       {loading && <LoadSvg className="loading-anim" />}
       {error && error}
-      <Pictures />
-      {cloth && (
-        <Slider prod={Api} className="glide2" head="Our picks for you" />
-      )}
+      <BlokImg />
+      <Slider prod={Api} className="glide2" head="Our picks for you" />
       <EcoShop />
       <LineImg />
       <Brands />

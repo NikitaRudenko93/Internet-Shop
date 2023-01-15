@@ -3,14 +3,14 @@ import { SlideHeartSvg } from "./image";
 import useFavorite from "./hooks/useFavorite";
 
 const Card = ({ value }) => {
-  const { id, title, price, description, category, image, rating } = value;
+  const { id, title, price, description, category, image = [], rating } = value;
 
   const { inFavorites, toggleFavorites } = useFavorite(id, value);
 
   return (
     <>
       <div className="card">
-        <div className="card__img">
+        <div className="card__wrap-img">
           <img className="card__img" src={image} alt={title} />
           <button
             className="card__favorite"

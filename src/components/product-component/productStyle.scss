@@ -15,6 +15,7 @@
   &__container_drop {
     width: 350px;
     position: absolute;
+    z-index: 0;
     top: 39px;
     left: -1px;
     border: solid 1px #CCCBCF;
@@ -43,6 +44,7 @@
     text-align: right;
     border: none;
     position: absolute;
+    z-index: 2;
     background: none;
     cursor: pointer;
     height: 40px;
@@ -65,6 +67,7 @@
   display: flex;
   justify-content: space-between;
   padding-top: 80px;
+  padding-bottom: 50px;
 
   &__img {
     &_size {
@@ -76,6 +79,7 @@
 
   &__inner {
     margin-left: 30px;
+    max-width: 350px;
   }
 
   &__text {
@@ -83,6 +87,7 @@
     color: #6E6D74;
     padding-bottom: 12px;
   }
+
 
   &__title {
     font-family: 'Merriweather';
@@ -96,12 +101,15 @@
   &__star-rate {
     display: flex;
     justify-content: space-between;
-    max-width: 220px;
+    max-width: 230px;
     padding-right: 5px;
 
     &_pos {
       display: flex;
       align-items: center;
+      width: 95px;
+      margin-right: 5px;
+      position: relative;
     }
   }
 
@@ -137,6 +145,17 @@
       background-color: rgba(2, 232, 2, 0.838);
       border-radius: 50%;
     }
+
+    &_red,
+    &_green {
+      border: none;
+      cursor: pointer;
+      transition: all 0.5s linear;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
   }
 
   &__add {
@@ -161,17 +180,115 @@
       fill: #32313A;
     }
   }
+
+  &__reviews {
+    margin-top: 40px;
+  }
+
+  &__reviews-rate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 18px;
+  }
+
+  &__reviews-star {
+    display: flex;
+    align-items: center;
+    width: 95px;
+    margin-left: 5px;
+    position: relative;
+  }
+
+  &__reviews-score {
+    font-weight: 600;
+    font-size: 24px;
+    color: #32313A;
+  }
+
+  &__reviews-score-max {
+    font-weight: 300;
+    font-size: 20px;
+    color: #56555D;
+    margin-left: 10px;
+  }
 }
 
 .size-cloth {
   margin: 30px 0;
 
-  &__text {
+  &__text,
+  &__btn {
     font-size: 14px;
     color: #6E6D74;
     margin-bottom: 12px;
     max-width: 350px;
     display: flex;
     justify-content: space-between;
+  }
+
+  &__btn {
+    border: none;
+    background: unset;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+}
+
+.descr {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+
+  &__text {
+    font-size: 14px;
+    color: #6E6D74;
+    padding-bottom: 12px;
+  }
+
+  &__text-hidden {
+    display: none;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 14px;
+    color: #32313A;
+  }
+
+  &__btn-toggle {
+    border: none;
+    height: 20px;
+    background-color: unset;
+    cursor: pointer;
+  }
+
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+
+  &_active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__content {
+    padding: 25px;
+    background-color: white;
+    border-radius: 16px;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
   }
 }

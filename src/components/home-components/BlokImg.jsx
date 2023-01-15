@@ -11,13 +11,13 @@ const picture = [
   },
 ];
 
-const Pictures = () => {
+const BlokImg = () => {
   return (
     <>
-      <div className="pictures container">
+      <div className="blok-img container">
         {picture.map(({ img }, index) => {
           return (
-            <div className="pictures__img" key={`keyArr_${index}`}>
+            <div className="blok-img__img" key={`keyArr_${index}`}>
               <img src={img} alt="pict" />
             </div>
           );
@@ -27,4 +27,4 @@ const Pictures = () => {
   );
 };
 
-export default Pictures;
+export default BlokImg;

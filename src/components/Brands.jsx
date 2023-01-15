@@ -5,13 +5,13 @@ import { ConverseSvg, MartensSvg, NbSvg, SteveSvg, UggSvg } from "./brandsImg";
 const Brands = () => {
   return (
     <>
-      <div className="container brands">
+      <div className="brands container">
         <NbSvg className="brands__item" />
         <MartensSvg className="brands__item" />
         <ConverseSvg className="brands__item" />
         <SteveSvg className="brands__item" />
         <UggSvg className="brands__item" />
-        <Link to="/" className="brands__link">
+        <Link to="/brands" className="brands__link">
           All brands
         </Link>
       </div>

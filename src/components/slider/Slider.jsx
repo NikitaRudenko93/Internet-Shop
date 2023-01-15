@@ -15,11 +15,12 @@ const Arrow = () => {
 
 const glideConfig = {
   perView: 4,
+  startAt: 0,
+  focusAt: 0,
   // type: "carousel",
   // autoplay: 2000,
-  // animationDuration: 600,
+  keyboard: true,
   animationTimingFunc: "linear",
-  // hoverpause: true,
 };
 
 const Slider = ({ head, prod = [], className = "glide" }) => {
@@ -34,7 +35,7 @@ const Slider = ({ head, prod = [], className = "glide" }) => {
       <div className="slider container">
         <div className={className}>
           <div className="glide__arrows slider__head" data-glide-el="controls">
-            <h2 className="slider__titel">{head}</h2>
+            <h2 className="slider__titel titel">{head}</h2>
             <button className="slider__arrow" data-glide-dir="<">
               <Arrow />
             </button>

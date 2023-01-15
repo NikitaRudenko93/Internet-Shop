@@ -1,27 +1,10 @@
 import React, { useState } from "react";
 import "./productStyle.scss";
+import { IconDown } from "../image";
 
-const IconDown = ({ className }) => (
-  <svg
-    className={className}
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    fill="none"
-  >
-    <path
-      stroke="#32313A"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.5"
-      d="m15 7.5-5 5-5-5"
-    />
-  </svg>
-);
-
-const SizeBar = ({ item }) => {
+const SizeBar = ({ setSize, size }) => {
   const sizeWomen = [25, 26, 27, 28, 29, 30];
-  const [size, setSize] = useState(null);
+
   const [hidden, setHidden] = useState(false);
 
   return (

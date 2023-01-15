@@ -508,3 +508,52 @@ export const WitoutItemSvg = () => (
     />
   </svg>
 );
+
+export const ToggleSvg = ({ toggle }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none">
+    <path
+      stroke="#32313A"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.5"
+      d={`M10 ${toggle ? "15.657V4." : ""}343M4.343 10h11.314`}
+    />
+  </svg>
+);
+
+export const FavoriteSvg = ({ className }) => (
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    width="42"
+    height="42"
+    fill="none"
+  >
+    <rect width="42" height="42" fill="#E4E5E8" rx="21" cursor="pointer" />
+    <path
+      stroke="#6E6D74"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.5"
+      d="M28.367 14.842a4.58 4.58 0 0 0-4.996-.995 4.581 4.581 0 0 0-1.487.995l-.884.883-.883-.883a4.584 4.584 0 1 0-6.484 6.483l.884.883L21 28.692l6.483-6.484.884-.883a4.581 4.581 0 0 0 0-6.483v0Z"
+    />
+  </svg>
+);
+
+export const IconDown = ({ className }) => (
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    fill="none"
+  >
+    <path
+      stroke="#32313A"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.5"
+      d="m15 7.5-5 5-5-5"
+    />
+  </svg>
+);

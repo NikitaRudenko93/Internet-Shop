@@ -1,50 +1,49 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import StarsRate from "../components/StarRate";
-import { LoadSvg } from "../components/image";
+import { LoadSvg, FavoriteSvg } from "../components/image";
 import axios from "axios";
 import { SizeBar } from "../components/product-component/SizeBar";
-import "../components/product-component/productStyle.scss";
 import useFavorite from "../components/hooks/useFavorite";
-
-const FavoriteSvg = ({ className }) => (
-  <svg
-    className={className}
-    xmlns="http://www.w3.org/2000/svg"
-    width="42"
-    height="42"
-    fill="none"
-  >
-    <rect width="42" height="42" fill="#E4E5E8" rx="21" cursor="pointer" />
-    <path
-      stroke="#6E6D74"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.5"
-      d="M28.367 14.842a4.58 4.58 0 0 0-4.996-.995 4.581 4.581 0 0 0-1.487.995l-.884.883-.883-.883a4.584 4.584 0 1 0-6.484 6.483l.884.883L21 28.692l6.483-6.484.884-.883a4.581 4.581 0 0 0 0-6.483v0Z"
-    />
-  </svg>
-);
+import { cartAdd } from "../store/actions/cartAction";
+import { useDispatch } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
+import Description from "../components/product-component/Description";
+import Modal from "../components/product-component/Modal";
+import sizeImg from "../components/product-component/sizeImg.jpg";
+import Slider from "../components/slider/Slider";
+import Api from "../components/imageSlider/Api";
 
 const Product = () => {
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
-  const [productData, setProuctData] = useState({});
+  const [productData, setProductData] = useState({});
+  const [size, setSize] = useState(null);
+  const [color, setColor] = useState("");
+  const [modal, setModal] = useState(false);
   const { id } = useParams();
-
-  useEffect(() => {
-    setLoading(true);
-    axios.get(`https://fakestoreapi.com/products/${id}`).then(({ data }) => {
-      setProuctData(data);
-      setLoading(false);
-    });
-  }, [id]);
-
-  const { title, price, description, category, image, rating } = productData;
+  const {
+    title,
+    price,
+    description,
+    category = [],
+    image,
+    rating,
+  } = productData;
 
   const { inFavorites, toggleFavorites } = useFavorite(
     productData.id,
     productData
   );
+
+  useEffect(() => {
+    setLoading(true);
+    axios.get(`https://fakestoreapi.com/products/${id}`).then(({ data }) => {
+      setProductData(data);
+      setLoading(false);
+    });
+  }, [id]);
+
   return loading ? (
     <LoadSvg className="loading-anim" />
   ) : (
@@ -71,23 +70,64 @@ const Product = () => {
             <span className="product__choose-color">Red/green patterned</span>
           </div>
           <div className="product__choose-img">
-            <div className="product__choose-img_red"></div>
-            <div className="product__choose-img_green"></div>
+            <button
+              className="product__choose-img_red"
+              onClick={() => {
+                setColor("red");
+              }}
+            ></button>
+            <button
+              className="product__choose-img_green"
+              onClick={() => {
+                setColor("green");
+              }}
+            ></button>
           </div>
           <div className="size-cloth">
             <div className="size-cloth__wrap">
               <div className="size-cloth__text">
                 Select size:
-                <a href="/" className="size-cloth__text">
+                <button
+                  className="size-cloth__btn"
+                  onClick={() => setModal(true)}
+                >
                   Size guide
-                </a>
+                </button>
+                <Modal visible={modal} setVisible={setModal}>
+                  <img src={sizeImg} alt="size" />
+                  <button
+                    className="size-cloth__btn"
+                    onClick={() => setModal(false)}
+                  >
+                    Close
+                  </button>
+                </Modal>
               </div>
-              <SizeBar />
+              <SizeBar setSize={setSize} size={size} />
             </div>
-            <div className="size-cloth__burger"></div>
           </div>
           <div className="product__add">
-            <button className="btn product__btn">Add to cart</button>
+            <button
+              className="product__btn btn"
+              onClick={() => {
+                if (size !== null && color !== "") {
+                  dispatch(
+                    cartAdd({
+                      ...productData,
+                      size: size,
+                      costDelivery: 10,
+                      count: 1,
+                      cartId: uuidv4(),
+                      color: color,
+                    })
+                  );
+                } else {
+                  alert("Choose color or size");
+                }
+              }}
+            >
+              Add to cart
+            </button>
             <button
               className="product__favorites"
               onClick={() => {
@@ -103,12 +143,27 @@ const Product = () => {
           </div>
           <div className="product__info">
             <div className="product__descr">
-              <button className="product__btn-drop"></button>
-              <div className="product__text">{description}</div>
+              <Description description={description} title="Product details" />
+            </div>
+            <div className="product__descr">
+              <Description title="Delivery and payment" />
+            </div>
+          </div>
+          <div className="product__reviews">
+            <h3 className="product__descr-title">Reviews ({rating?.count})</h3>
+            <div className="product__reviews-rate">
+              <p className="product__reviews-score">
+                {rating?.rate}
+                <span className="product__reviews-score-max">/5.0</span>
+              </p>
+              <div className="product__reviews-star">
+                <StarsRate rate={rating?.rate} />
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <Slider prod={Api} head="You may also like" />
     </div>
   );
 };

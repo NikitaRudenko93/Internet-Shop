@@ -1,0 +1,267 @@
+.new-in {
+  display: flex;
+  justify-content: space-between;
+
+  &__col-1 {
+    max-width: 255px;
+    width: 100%;
+  }
+
+  &__col-2 {
+    max-width: 825px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__img-back {
+    height: 240px;
+    width: 100%;
+    background-size: cover;
+    margin-bottom: 40px;
+    margin-top: 80px;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__head {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    margin-left: 0;
+  }
+
+  &__head-text {
+    font-size: 14px;
+    margin-left: 0;
+  }
+
+  &__text {
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    color: #32313A;
+  }
+
+  &__card {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__btn {
+    font-weight: 600;
+    font-size: 14px;
+    color: #32313A;
+    width: 100%;
+    background: unset;
+    border: 1px solid #6E6D74;
+    border-radius: 2px;
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.3s linear;
+
+    &:hover {
+      background-color: #32313A;
+      color: #fff;
+    }
+
+    &_size {
+      max-width: 255px;
+    }
+  }
+
+  &__pages-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__pages {
+    font-weight: 400;
+    font-size: 12px;
+    color: #86858B;
+  }
+
+  &__line {
+    height: 30px;
+    line-height: 10px;
+  }
+}
+
+.filter-category {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-weight: 600;
+    font-size: 16px;
+    color: #32313A;
+    margin-top: 80px;
+  }
+
+  &__items {
+    border-bottom: 1px solid #E6E5E8;
+    padding-bottom: 16px;
+  }
+
+  &__item {
+    display: block;
+    margin: 16px 0;
+    text-decoration: none;
+    color: #4A4951;
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
+
+.filter-blok {
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 26px;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 16px;
+    color: #32313A;
+  }
+
+  &__input {
+    padding: 8px 0 8px 10px;
+    width: 100%;
+    border: 1px solid #B5B5BC;
+    border-radius: 2px;
+    outline: none;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 14px;
+      color: #86858B;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #E6E5E8;
+    padding-top: 19px;
+  }
+
+  &__item {
+    margin-right: 8px;
+  }
+
+  &__label {
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+    padding: 2px 0 2px 5px;
+
+    &:hover {
+      background-color: #e1e1e3;
+      border-radius: 5px;
+    }
+  }
+
+}
+
+.filter-btn {
+  border: none;
+  background: unset;
+  height: 100%;
+  display: flex;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.active {
+  transform: rotate(180deg);
+  transition: all 0.2s linear;
+}
+
+.filter-color {
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 26px;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 16px;
+    color: #32313A;
+  }
+
+  &__btn {
+    border: none;
+    background: unset;
+    height: 100%;
+    display: flex;
+    transition: all 0.2s linear;
+    cursor: pointer;
+  }
+
+
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #E6E5E8;
+  }
+
+
+  &__item {
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s linear;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.filter-price {
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 26px;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 16px;
+    color: #32313A;
+  }
+
+  &__btn {
+    border: none;
+    background: unset;
+    height: 100%;
+    display: flex;
+    cursor: pointer;
+    transition: all 0.2s linear;
+  }
+}
+
+.drop {
+  display: none;
+}

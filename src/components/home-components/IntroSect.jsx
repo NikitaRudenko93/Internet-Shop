@@ -1,6 +1,5 @@
 import React from "react";
 import Home from "./image/home.png";
-import "./styleHome.scss";
 
 import Dresses from "./image/Dresses.png";
 import Skirts from "./image/Skirts.png";
@@ -55,7 +54,7 @@ const IntroCards = ({ value, img }) => {
 const IntroSect = () => {
   return (
     <div className="intro" style={{ backgroundImage: `url(${Home})` }}>
-      <div className="intro_opasity"></div>
+      <div className="intro__blur"></div>
       <div className="intro__content">
         {arr.map(({ type, img }, index) => {
           return (

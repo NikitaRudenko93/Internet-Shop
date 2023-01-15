@@ -1,13 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import clothReducer from "./reducers/clothReducer";
 import favoritesReducers from "./reducers/favoritesReducers";
-import countReducer from "./reducers/countReducer";
+import cartReducers from "./reducers/cartReducers";
 
 const store = configureStore({
   reducer: {
     clothWomen: clothReducer,
     favorites: favoritesReducers,
-    count: countReducer,
+    cart: cartReducers,
   },
 });
 

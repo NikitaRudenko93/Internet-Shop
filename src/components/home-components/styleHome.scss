@@ -26,7 +26,6 @@
 
   &__link {
     color: #fff;
-    display: inline-block;
     margin-left: 20px;
   }
 }
@@ -38,8 +37,9 @@
   background-size: cover;
   margin-bottom: 50px;
   position: relative;
+  min-height: 520px;
 
-  &_opasity {
+  &__blur {
     height: 100%;
     transition: all 1s;
 
@@ -107,7 +107,7 @@
   }
 }
 
-.pictures {
+.blok-img {
   display: flex;
   justify-content: space-between;
   padding: 50px 0;
@@ -125,38 +125,37 @@
   justify-content: space-between;
   padding: 50px 0;
 
-  &__img {
-    width: 540px;
-    height: 479px;
-    margin: 0;
-  }
-
-  .eco {
+  &__col-1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
 
-    &__head {
-      font-family: 'Merriweather';
-      font-weight: 700;
-      font-size: 36px;
-      color: #32313A;
-      margin-left: 0;
-    }
+  &__title {
+    font-family: 'Merriweather';
+    font-weight: 700;
+    font-size: 36px;
+    color: #32313A;
+    margin-left: 0;
+  }
 
-    &__text {
-      font-size: 14px;
-      width: 444px;
-      line-height: 22px;
-      color: #6E6D74;
-      margin-top: 16px;
-    }
+  &__text {
+    width: 444px;
+    line-height: 22px;
+    margin-top: 16px;
+  }
 
-    &__btn {
-      margin-top: 30px;
-      padding: 10px 8px;
-      max-width: 190px;
-    }
+  &__btn {
+    margin-top: 30px;
+    padding: 10px 8px;
+    max-width: 190px;
+  }
+
+
+  &__col-2 {
+    width: 540px;
+    height: 479px;
+    margin: 0;
   }
 }
 

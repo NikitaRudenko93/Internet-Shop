@@ -14,10 +14,20 @@ import FilterCategories from "../components/new-in-component/FilterCategories";
 import FilterColor from "../components/new-in-component/FilterColor";
 import FilterBlok from "../components/new-in-component/FilterBlok";
 import FilterPrice from "../components/new-in-component/FilterPrice";
+import { useState } from "react";
 
 const NewIn = () => {
   const dispatch = useDispatch();
   const { loading, error, cloth } = useSelector((store) => store.clothWomen);
+  const [visible, setVisible] = useState(3);
+
+  const showMoreItem = () => {
+    if (cloth.length > visible) {
+      setVisible((prevValue) => prevValue + 3);
+    } else {
+      setVisible(cloth.length);
+    }
+  };
 
   useEffect(() => {
     dispatch(clothLoading());
@@ -76,24 +86,33 @@ const NewIn = () => {
               <div className="new-in__card">
                 {loading && <LoadSvg className="loading-anim" />}
                 {cloth &&
-                  cloth.map((item, index) => <Card value={item} key={index} />)}
+                  cloth
+                    .slice(0, visible)
+                    .map((item, index) => <Card value={item} key={index} />)}
                 {error && error}
               </div>
               <div className="new-in__pages-wrap">
                 <p className="new-in__pages">
-                  You’ve viewed {cloth.length} of 1403 products
+                  You’ve viewed {visible} of {cloth.length} products
                 </p>
                 <div className="new-in__line">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="286"
-                    height="2"
-                    fill="none"
-                  >
+                  <svg xmlns="http://www.w3.org/2000/svg" height="2">
                     <rect width="286" height="2" fill="#E6E5E8" rx="1" />
+                    <rect
+                      style={{
+                        width: `${(visible / cloth.length) * 286}`,
+                      }}
+                      height="2"
+                      fill="#E6E5E8"
+                      stroke="#32313A"
+                      rx="1"
+                    />
                   </svg>
                 </div>
-                <button className="new-in__btn new-in__btn_size">
+                <button
+                  className="new-in__btn new-in__btn_size"
+                  onClick={showMoreItem}
+                >
                   Load more
                 </button>
               </div>

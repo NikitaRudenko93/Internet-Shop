@@ -72,7 +72,7 @@ const Cart = () => {
     <div className="container">
       <div className="favorites__without-content">
         <EmptyBagSvg />
-        <p className="favorites__text">You have no added items.</p>
+        <p className="favorites__text">Your Cart is empty.</p>
         <Link to="/">
           <button className="favorites__button btn">Start shopping</button>
         </Link>

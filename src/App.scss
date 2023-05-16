@@ -1,6 +1,3 @@
-@import "styleApp.scss";
-
-
 * {
   margin: 0;
   padding: 0;
@@ -18,113 +15,10 @@ body {
   background-color: #fff;
 }
 
-
-
 .container {
   max-width: 1110px;
   width: 100%;
   margin: 0 auto;
-}
-
-.header {
-  background-color: #32313A;
-
-  &__top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 60px;
-  }
-}
-
-.pagination {
-  display: flex;
-  justify-content: space-between;
-  max-width: 100px;
-  width: 100%;
-
-  &__icon:hover {
-    fill: #ED83A8;
-  }
-
-  a {
-    height: 20px;
-  }
-}
-
-.nav {
-
-  &__blok {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  &__elem {
-    margin: 16px 0;
-  }
-
-  &__link {
-    text-decoration: none;
-    padding-right: 32px;
-    font-weight: 600;
-    font-size: 13px;
-    color: #32313A;
-  }
-
-  &__but-down {
-    margin-left: 4px;
-    height: 8px;
-  }
-
-  .search {
-    display: flex;
-    position: relative;
-
-    &__icon {
-      margin-right: 10px;
-
-    }
-
-    &__inp {
-      border: none;
-      width: 73px;
-      height: 20px;
-      outline: none;
-      font-size: 13px;
-
-      &::placeholder {
-        color: #32313A;
-      }
-    }
-
-    &__result {
-      position: absolute;
-      width: 200px;
-      left: 0;
-      top: 25px;
-      z-index: 5;
-      border-radius: 3px;
-      background-color: rgb(234, 234, 234);
-      opacity: 0.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: #32313A;
-    }
-
-    &__result-inner {
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      margin: 10px;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
 }
 
 .loading-anim {
@@ -133,83 +27,11 @@ body {
   height: calc(100vh - 520px);
 }
 
-.card {
-  margin-bottom: 30px;
-  cursor: default;
-
-  &__favorite {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    cursor: pointer;
-  }
-
-  &__wrap-img {
-    position: relative;
-  }
-
-  &__img {
-    width: 255px;
-    height: 384px;
-    object-fit: contain;
-  }
-
-  &__link {
-    text-decoration: none;
-  }
-
-  &__title {
-    max-width: 200px;
-    display: block;
-    font-family: 'Merriweather';
-    font-weight: 700;
-    font-size: 14px;
-    margin-top: 14px;
-    text-decoration: none;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    color: #32313A;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  &__desc {
-    display: -webkit-box;
-    font-size: 13px;
-    margin-top: 8px;
-    width: 200px;
-    color: #56555D;
-    overflow: hidden;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
-  }
-
-  &__cost {
-    font-size: 13px;
-    margin-top: 10px;
-    color: #56555D;
-  }
-
-  &__favorite {
-    border: none;
-    background-color: unset;
-
-
-    &_active {
-      fill: #32313A;
-    }
-  }
-}
-
 .btn {
   border-radius: 2px;
   font-size: 14px;
   font-weight: 600;
-  background: #32313A;
+  background-color: #32313A;
   outline: none;
   border: none;
   color: #fff;
@@ -221,174 +43,12 @@ body {
   }
 }
 
-.brands {
+.df {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 50px 0;
 
-  &__item {
-    cursor: pointer;
-    transition: all 0.5s linear;
-
-    &:hover {
-      transform: scale(1.2);
-    }
-  }
-
-  &__link {
-    font-size: 18px;
-    color: #32313A;
-  }
-}
-
-.footer {
-  background-color: #F7F7F9;
-  height: 300px;
-  margin-top: 50px;
-
-  &__column {
-    display: flex;
-    align-items: center;
+  &-jc-sb {
     justify-content: space-between;
-    padding-top: 60px;
   }
 }
 
-.support,
-.account {
-  display: flex;
-  flex-direction: column;
-  line-height: 33px;
-  padding: 5px;
-}
-
-.head {
-  color: #32313A;
-  font-weight: 600;
-  font-size: 16px;
-}
-
-.text {
-  font-weight: 400;
-  font-size: 14px;
-  color: #6E6D74;
-  text-decoration: none;
-}
-
-.send {
-  padding: 5px;
-
-  &__text {
-    width: 530px;
-    font-weight: 400;
-    font-size: 14px;
-    color: #6E6D74;
-    line-height: 22px;
-  }
-
-  &__subs {
-    margin-top: 24px;
-  }
-
-  &__input {
-    border: none;
-    padding: 10px 60px 10px 12px;
-
-    &::placeholder {
-      font-weight: 400;
-      font-size: 14px;
-      color: #86858B;
-    }
-  }
-
-  &__btn {
-    padding: 10px 20px;
-  }
-}
-
-
-
-.social {
-  margin-top: 40px;
-  display: flex;
-  align-items: center;
-
-  &__icon {
-    margin-right: 20px;
-    cursor: pointer;
-  }
-}
-
-.bot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 0;
-
-  &__logo {
-    fill: #32313A;
-  }
-
-  &__stroke {
-    color: #86858B;
-  }
-}
-
-.line {
-  border-top: 1px solid #E6E5E8;
-}
-
-.favorites {
-
-  &__titel {
-    margin-bottom: 8px;
-  }
-
-  &__count {
-    font-weight: 400;
-    font-size: 12px;
-    color: #6E6D74;
-    margin-bottom: 20px;
-  }
-
-  &__card {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-
-  &__without-content {
-    text-align: center;
-    line-height: 25px;
-    padding: 220px 0;
-  }
-
-  &__text {
-    font-size: 14px;
-    color: #56555D;
-  }
-
-  &__button {
-    padding: 10px 125px;
-    margin-top: 30px;
-  }
-}
-
-.title {
-  font-family: 'Merriweather';
-  font-weight: 700;
-  font-size: 26px;
-  color: #32313A;
-}
-
-.star {
-  position: absolute;
-  left: 0;
-  z-index: 1;
-}
-
-.star-background {
-  position: absolute;
-  left: 0;
-}
+@import "./style/styleApp.scss";

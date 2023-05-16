@@ -1,7 +1,7 @@
-import { HeartSvg, LogoSvg, ShopBagSvg, UserSvg } from "./image";
+import { HeartSvg, LogoSvg, ShopBagSvg, UserSvg } from "./imageSvg";
 import Footer from "./Footer";
 import Nav from "./Nav";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -25,6 +25,7 @@ const Header = () => {
         </div>
       </header>
       <Nav />
+      <Outlet />
       <Footer />
     </>
   );

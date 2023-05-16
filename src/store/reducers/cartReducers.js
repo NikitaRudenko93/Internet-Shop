@@ -9,7 +9,7 @@ const cartReducers = createReducer([], (builder) => {
         ? [
             ...store.map((item) => {
               if (item.size === payload.size && item.color === payload.color) {
-                return { ...item, count: payload.count + item.count };
+                return { ...item, count: item.count + payload.count };
               } else {
                 return item;
               }

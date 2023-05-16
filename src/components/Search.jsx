@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { SearchSvg } from "./image";
+import { SearchSvg } from "./imageSvg";
 import { useSelector, useDispatch } from "react-redux";
 import { getCloth } from "../api/cloth";
 import {

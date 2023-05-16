@@ -6,7 +6,7 @@ import {
   PinterestSvg,
   TwitterSvg,
   YouTubeSvg,
-} from "./image";
+} from "./imageSvg";
 
 const Footer = () => {
   return (

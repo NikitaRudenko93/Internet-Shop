@@ -1,0 +1,53 @@
+.favorites {
+
+  &__titel {
+    margin-bottom: 8px;
+  }
+
+  &__count {
+    font-weight: 400;
+    font-size: 12px;
+    color: #6E6D74;
+    margin-bottom: 20px;
+  }
+
+  &__card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  &__without-content {
+    text-align: center;
+    line-height: 25px;
+    padding: 220px 0;
+  }
+
+  &__text {
+    font-size: 14px;
+    color: #56555D;
+  }
+
+  &__button {
+    padding: 10px 125px;
+    margin-top: 30px;
+  }
+}
+
+.title {
+  font-family: 'Merriweather';
+  font-weight: 700;
+  font-size: 26px;
+  color: #32313A;
+}
+
+.star {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+
+.star-background {
+  position: absolute;
+  left: 0;
+}

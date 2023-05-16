@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { SlideHeartSvg } from "./image";
-import useFavorite from "./hooks/useFavorite";
+import { SlideHeartSvg } from "./imageSvg";
+import useFavorite from "../hooks/useFavorite";
 
 const Card = ({ value }) => {
-  const { id, title, price, description, category, image = [], rating } = value;
+  const { id, title, price, description, image = [] } = value;
 
   const { inFavorites, toggleFavorites } = useFavorite(id, value);
 

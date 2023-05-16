@@ -1,0 +1,92 @@
+.footer {
+  background-color: #F7F7F9;
+  height: 300px;
+  margin-top: 50px;
+
+  &__column {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 60px;
+  }
+}
+
+.support,
+.account {
+  display: flex;
+  flex-direction: column;
+  line-height: 33px;
+  padding: 5px;
+}
+
+.head {
+  color: #32313A;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 14px;
+  color: #6E6D74;
+  text-decoration: none;
+}
+
+.send {
+  padding: 5px;
+
+  &__text {
+    width: 530px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #6E6D74;
+    line-height: 22px;
+  }
+
+  &__subs {
+    margin-top: 24px;
+  }
+
+  &__input {
+    border: none;
+    padding: 10px 60px 10px 12px;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 14px;
+      color: #86858B;
+    }
+  }
+
+  &__btn {
+    padding: 10px 20px;
+  }
+}
+
+
+
+.social {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    margin-right: 20px;
+    cursor: pointer;
+  }
+}
+
+.bot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+
+  &__logo {
+    fill: #32313A;
+  }
+
+  &__stroke {
+    color: #86858B;
+  }
+}

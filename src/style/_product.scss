@@ -1,0 +1,292 @@
+.size-nav {
+  width: 350px;
+  height: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: solid 1px #CCCBCF;
+
+  &__elem {
+    font-size: 14px;
+    margin-left: 12px;
+    width: 100%;
+  }
+
+  &__container_drop {
+    width: 350px;
+    position: absolute;
+    z-index: 0;
+    top: 39px;
+    left: -1px;
+    border: solid 1px #CCCBCF;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  &__container {
+    display: none;
+  }
+
+  &__drop-content {
+    list-style-type: none;
+    padding: 10px;
+    border-bottom: solid 1px #CCCBCF;
+    background-color: #fff;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #dfdfdf;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    text-align: right;
+    border: none;
+    position: absolute;
+    z-index: 2;
+    background: none;
+    cursor: pointer;
+    height: 40px;
+    padding-right: 10px;
+    line-height: 10px;
+  }
+
+  &__button-icon {
+    transition: all 0.5s linear;
+
+    &_active {
+      transform: rotate(180deg);
+      transition: all 0.5s linear;
+    }
+  }
+
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 80px;
+  padding-bottom: 50px;
+
+  &__img {
+    width: 610px;
+    height: 900px;
+    object-fit: contain;
+  }
+
+  &__inner {
+    margin-left: 30px;
+    max-width: 350px;
+  }
+
+  &__text {
+    font-size: 14px;
+    color: #6E6D74;
+    padding-bottom: 12px;
+  }
+
+
+  &__title {
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    color: #32313A;
+    padding-bottom: 16px;
+  }
+
+  &__star-rate {
+    display: flex;
+    justify-content: space-between;
+    max-width: 230px;
+    padding-right: 5px;
+
+    &_pos {
+      display: flex;
+      align-items: center;
+      width: 95px;
+      margin-right: 5px;
+      position: relative;
+    }
+  }
+
+  &__price {
+    padding: 30px 0;
+    font-weight: 600;
+    font-size: 24px;
+    color: #DA2E3F;
+  }
+
+  &__choose-color {
+    font-weight: 600;
+    font-size: 14px;
+    color: #4A4951;
+    margin-left: 6px;
+  }
+
+  &__choose-img {
+    display: flex;
+    gap: 15px;
+
+
+    &_red {
+      width: 50px;
+      height: 50px;
+      background-color: rgb(255, 0, 0);
+      border-radius: 50%;
+    }
+
+    &_green {
+      width: 50px;
+      height: 50px;
+      background-color: rgba(2, 232, 2, 0.838);
+      border-radius: 50%;
+    }
+
+    &_red,
+    &_green {
+      border: none;
+      cursor: pointer;
+      transition: all 0.5s linear;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__add {
+    max-width: 350px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  &__btn {
+    max-width: 300px;
+    width: 100%;
+  }
+
+  &__favorites {
+    border: none;
+    background-color: white;
+    height: 42px;
+    cursor: pointer;
+
+    &_active {
+      fill: #32313A;
+    }
+  }
+
+  &__reviews {
+    margin-top: 40px;
+  }
+
+  &__reviews-rate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 18px;
+  }
+
+  &__reviews-star {
+    display: flex;
+    align-items: center;
+    width: 95px;
+    margin-left: 5px;
+    position: relative;
+  }
+
+  &__reviews-score {
+    font-weight: 600;
+    font-size: 24px;
+    color: #32313A;
+  }
+
+  &__reviews-score-max {
+    font-weight: 300;
+    font-size: 20px;
+    color: #56555D;
+    margin-left: 10px;
+  }
+}
+
+.size-cloth {
+  margin: 30px 0;
+
+  &__text,
+  &__btn {
+    font-size: 14px;
+    color: #6E6D74;
+    margin-bottom: 12px;
+    max-width: 350px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    border: none;
+    background: unset;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+}
+
+.descr {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+
+  &__text {
+    font-size: 14px;
+    color: #6E6D74;
+    padding-bottom: 12px;
+  }
+
+  &__text-hidden {
+    display: none;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 14px;
+    color: #32313A;
+  }
+
+  &__btn-toggle {
+    border: none;
+    height: 20px;
+    background-color: unset;
+    cursor: pointer;
+  }
+
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+
+  &_active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__content {
+    padding: 25px;
+    background-color: white;
+    border-radius: 16px;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+}

@@ -1,0 +1,130 @@
+@keyframes scroll {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-100%, 0)
+  }
+}
+
+.discount {
+  background-color: #ED83A8;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-weight: 400;
+  font-size: 18px;
+  height: 60px;
+  white-space: nowrap;
+  overflow: hidden;
+
+  &__text {
+    padding-left: 100%;
+    animation: scroll 30s infinite linear;
+  }
+
+  &__link {
+    color: #fff;
+    margin-left: 20px;
+  }
+}
+
+.hero {
+  margin-top: 10px;
+  height: calc(100vh - 184px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 50px;
+  position: relative;
+  min-height: 520px;
+
+
+  &__blur {
+    height: 100%;
+    transition: all 1s;
+
+    &:hover {
+      background-color: #ED83A8;
+      opacity: 0.6;
+    }
+  }
+
+  @for $i from 1 through 6 {
+    &__card:nth-of-type(#{$i}) {
+      position: absolute;
+      bottom: 100px;
+      left: 165px + 187px * ($i - 1);
+    }
+  }
+
+  &__img {
+    display: block;
+    object-fit: contain;
+  }
+
+  &__btn {
+    width: 100%;
+    padding: 5px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.blok-picture {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0;
+
+  &__img {
+    width: 550px;
+    height: 770px;
+    margin: 0;
+    background-color: #a6a5ad;
+  }
+}
+
+.eco-shop {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0;
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    font-family: 'Merriweather';
+    font-weight: 700;
+    font-size: 36px;
+    color: #32313A;
+    margin-left: 0;
+  }
+
+  &__text {
+    width: 444px;
+    line-height: 22px;
+    margin-top: 16px;
+  }
+
+  &__btn {
+    margin-top: 30px;
+    padding: 10px 8px;
+    max-width: 190px;
+  }
+
+
+  &__img {
+    display: block;
+    width: 540px;
+    height: 479px;
+  }
+}
+
+.line-img {
+  padding: 120px 0 50px 0;
+}

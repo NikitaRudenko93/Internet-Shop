@@ -1,0 +1,20 @@
+.brands {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 0;
+
+  &__item {
+    cursor: pointer;
+    transition: all 0.5s linear;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    color: #32313A;
+  }
+}
